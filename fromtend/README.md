@@ -60,24 +60,33 @@ fromtend/
     ├── main.js
     ├── index.css
     ├── components/
-    │   ├── base/
-    │   │   └── EnrollButton.js
-    │   └── feature/
-    │       ├── EnrollModal.js
-    │       ├── Footer.js
-    │       └── Navbar.js
-    ├── context/
-    │   ├── EnrollContext.js
-    │   └── ThemeContext.js
-    ├── mocks/
+    │   ├── EnrollButton.js
+    │   ├── Footer.js
+    │   └── Navbar.js
+    ├── mock/
     │   └── data.js
     ├── pages/
-    │   └── home/
-    │       ├── page.js
-    │       └── components/
-    │           └── sections.js
-    └── router/
-        └── index.js
+    │   └── home.js
+    ├── popup/
+    │   └── EnrollModal.js
+    ├── router/
+    │   └── index.js
+    ├── sections/
+    │   ├── cta-banner.js
+    │   ├── faq.js
+    │   ├── gallery.js
+    │   ├── heading.js
+    │   ├── hero.js
+    │   ├── host-guests.js
+    │   ├── mentor.js
+    │   ├── pricing.js
+    │   ├── proof-strip.js
+    │   ├── testimonials.js
+    │   ├── upcoming-session.js
+    │   └── what-you-get.js
+    └── settings/
+        ├── EnrollContext.js
+        └── ThemeContext.js
 ```
 
 ## How It Works
@@ -105,7 +114,7 @@ The body contains a single mount element:
 renderApp(document.querySelector("#app"));
 ```
 
-`src/router/index.js` renders the home page. `src/pages/home/page.js` composes the page in the same high-level order as the original Cohortify app:
+`src/router/index.js` renders the home page. `src/pages/home.js` composes the page in the same high-level order as the original Cohortify app. Individual sections live in `src/sections/`:
 
 1. Navbar
 2. Hero
@@ -126,7 +135,7 @@ The component files return HTML strings. The browser inserts the complete result
 
 ### 3. Data-driven content
 
-`src/mocks/data.js` contains the page content and asset URLs:
+`src/mock/data.js` contains the page content and asset URLs:
 
 - Brand information
 - Navigation links
@@ -155,13 +164,13 @@ After rendering, `src/main.js` attaches event listeners for:
 - Gallery lightbox controls
 - FAQ toggling
 
-`src/context/ThemeContext.js` stores the selected theme under:
+`src/settings/ThemeContext.js` stores the selected theme under:
 
 ```text
 cohortify-theme
 ```
 
-`src/context/EnrollContext.js` stores submitted enrollment records under:
+`src/settings/EnrollContext.js` stores submitted enrollment records under:
 
 ```text
 cohortify_enrollments
@@ -292,15 +301,15 @@ The first FAQ item starts open. Clicking another question closes the previous it
 Edit:
 
 ```text
-src/mocks/data.js
+src/mock/data.js
 ```
 
 ### Change page structure
 
-Edit:
+Edit the relevant section file in:
 
 ```text
-src/pages/home/components/sections.js
+src/sections/
 ```
 
 ### Change global styling
@@ -324,7 +333,7 @@ server.js
 Edit:
 
 ```text
-src/pages/home/page.js
+src/pages/home.js
 ```
 
 ### Add a new interaction
