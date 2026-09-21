@@ -1,4 +1,4 @@
-import { brand } from "../../mocks/data.js";
+import { brand } from "../mock/data.js";
 
 export function Footer() {
   return `

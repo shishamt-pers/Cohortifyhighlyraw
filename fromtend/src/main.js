@@ -1,7 +1,7 @@
 import { renderApp } from "./router/index.js";
-import { setupTheme } from "./context/ThemeContext.js";
-import { setupEnrollment } from "./context/EnrollContext.js";
-import { images } from "./mocks/data.js";
+import { setupTheme } from "./settings/ThemeContext.js";
+import { setupEnrollment } from "./settings/EnrollContext.js";
+import { images } from "./mock/data.js";
 
 renderApp(document.querySelector("#app"));
 setupTheme();

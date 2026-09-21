@@ -1,4 +1,4 @@
-import { brand, navLinks } from "../../mocks/data.js";
+import { brand, navLinks } from "../mock/data.js";
 
 export function Navbar() {
   return `

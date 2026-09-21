@@ -1,4 +1,4 @@
-import { session } from "../../mocks/data.js";
+import { session } from "../mock/data.js";
 
 export function EnrollModal() {
   return `
